@@ -2,14 +2,14 @@ import { useState, useEffect } from 'react';
 import './Nav.css';
 
 function Nav() {
-  const [show, setShow] = useState(false);
+  const [showNav, setShowNav] = useState(false);
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
       if (window.scrollY > 100) {
-        setShow(true);
+        setShowNav(true);
       } else {
-        setShow(false);
+        setShowNav(false);
       }
       return () => {
         window.removeEventListener('scroll');
@@ -18,17 +18,15 @@ function Nav() {
   }, []);
 
   return (
-    <div className={`nav ${show && 'nav__black'}`}>
+    <div className={`nav ${showNav && 'nav__black'}`}>
       <img
         className='nav__logo'
-        // src='https://upload.wikimedia.org/wikipedia/commons/0/0f/'
         src='https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg'
         alt='Netflix Logo'
       />
 
       <img
         className='nav__avatar'
-        // src='https://pbs.twimg.com/profile_images/124011999041155'
         src='https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png'
         alt='Netflix Avatar'
       />

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import axios from './axios';
+import axios from './axios'; // here 'instance' from axios.js is imported as 'axios' for better readability (understandability)
 import requests from './requests';
 import './Banner.css';
 
@@ -19,6 +19,7 @@ function Banner() {
     fetchData();
   }, []);
 
+  // this function cuts the description after 150 characters and appends '...' to indicate there's more text
   function truncate(str, n) {
     return str?.length > n ? str.substr(0, n - 1) + '...' : str;
   }
